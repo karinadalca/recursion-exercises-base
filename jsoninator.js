@@ -7,7 +7,9 @@ const _ = require('underscore'); // the real one! :)
 
 
 const stringify = function(obj) {
-  // your code goes here
+  return _.map(obj, function (element, index, obj) { 
+    return typeof element === 'symbol' ? element.toString() : element; 
+  });
 };
 
 module.exports = {
