@@ -9,7 +9,7 @@ const flattenTreeToArray = function(node) {
   // Hint: Use visitAllNodes()
   // Your code here
   let array = [];
-  visitAllNodes(node, () => {
+  visitAllNodes(node, (node) => {
     array.push(node);
   });
   return array;

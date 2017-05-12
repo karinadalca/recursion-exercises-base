@@ -2,15 +2,24 @@ const { flattenTreeToArray } = require('./dom-util');
 const _ = require('underscore');
 
 const getElementById = function(root, id) {
-  // Your code here
+  const array = flattenTreeToArray(root);
+  let find = _.find(array, (element) => {return element.id === id});
+  return find;
 };
 
 const getElementsByClassName = function(root, className) {
-  // Your code here
+  const array = flattenTreeToArray(root);
+  const filter = _.filter(array, (element) => {
+    return element.className === className 
+    || (element.className
+    && element.className.includes(className))});
+  return filter;
 };
 
 const getElementsByTagName = function(root, tagName) {
-  // Your code here
+  const array = flattenTreeToArray(root);
+  const filter = _.filter(array, (element) => {return element.tagName === tagName});
+  return filter;
 };
 
 module.exports = {
